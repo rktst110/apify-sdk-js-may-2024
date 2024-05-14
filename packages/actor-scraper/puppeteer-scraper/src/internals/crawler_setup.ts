@@ -9,6 +9,7 @@ import {
     KeyValueStore,
     Request,
     RequestList,
+    RequestQueue,
     RequestQueueV2,
     EnqueueLinksByClickingElementsOptions,
     PuppeteerCrawlingContext,
@@ -47,7 +48,8 @@ export class CrawlerSetup implements CrawlerSetupOptions {
      * Used to store data that persist navigations
      */
     globalStore = new Map();
-    requestQueue: RequestQueueV2;
+    //requestQueue: RequestQueueV2;
+    requestQueue: RequestQueue;
     keyValueStore: KeyValueStore;
     customData: unknown;
     input: Input;
@@ -166,7 +168,8 @@ export class CrawlerSetup implements CrawlerSetupOptions {
         this.requestList = await RequestList.open('PUPPETEER_SCRAPER', startUrls);
 
         // RequestQueue
-        this.requestQueue = await RequestQueueV2.open(this.requestQueueName);
+        //this.requestQueue = await RequestQueueV2.open(this.requestQueueName);
+        this.requestQueue = await RequestQueue.open(this.requestQueueName);
 
         // Dataset
         this.dataset = await Dataset.open(this.datasetName);
