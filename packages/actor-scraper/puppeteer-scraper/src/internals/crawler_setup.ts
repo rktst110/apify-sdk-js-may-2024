@@ -10,7 +10,7 @@ import {
     Request,
     RequestList,
     RequestQueue,
-    RequestQueueV2,
+    //RequestQueueV2,
     EnqueueLinksByClickingElementsOptions,
     PuppeteerCrawlingContext,
     PuppeteerCrawler,
