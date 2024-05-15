@@ -48,8 +48,8 @@ export class CrawlerSetup implements CrawlerSetupOptions {
      * Used to store data that persist navigations
      */
     globalStore = new Map();
-    //requestQueue: RequestQueueV2;
-    requestQueue: RequestQueue;
+    requestQueue: RequestQueueV2;
+    //requestQueue: RequestQueue;
     keyValueStore: KeyValueStore;
     customData: unknown;
     input: Input;
