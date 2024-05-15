@@ -10,7 +10,7 @@ import {
     Request,
     RequestList,
     RequestQueue,
-    //RequestQueueV2,
+    RequestQueueV2,
     EnqueueLinksByClickingElementsOptions,
     PuppeteerCrawlingContext,
     PuppeteerCrawler,
@@ -168,8 +168,8 @@ export class CrawlerSetup implements CrawlerSetupOptions {
         this.requestList = await RequestList.open('PUPPETEER_SCRAPER', startUrls);
 
         // RequestQueue
-        //this.requestQueue = await RequestQueueV2.open(this.requestQueueName);
-        this.requestQueue = await RequestQueue.open(this.requestQueueName);
+        this.requestQueue = await RequestQueueV2.open(this.requestQueueName);
+        //this.requestQueue = await RequestQueue.open(this.requestQueueName);
 
         // Dataset
         this.dataset = await Dataset.open(this.datasetName);
@@ -277,10 +277,10 @@ export class CrawlerSetup implements CrawlerSetupOptions {
                 },
             },
              browserPoolOptions: browserPoolOptionsObject,
-            experiments: {
+          //  experiments: {
                 //requestLocking: true,
-                requestLocking: false,
-            },
+            //    requestLocking: false,
+            //},
         };
 
         this._createNavigationHooks(options);
